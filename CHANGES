@@ -10,7 +10,7 @@ CyPROM v0.2
   a current total of 11 scenarios
 * Created a sample web site that can be used to demonstrate the new
   functionality of CyPROM; the necessary files are provided as an
-  additional asset in the GitHub release, named "cyweb.zip"
+  additional asset in the GitHub release, named "cyweb.tgz"
 * Added the command-line argument '--team_name' that makes it possible
   to run a scenario for only one specific team
 * Improved and verified source code compatibility with Python 3, and
