@@ -1,4 +1,3 @@
-
 #############################################################################
 # Classes related to database table removal
 #############################################################################
@@ -7,8 +6,9 @@
 from database_create import createTable
 
 
+# Delete tables
 class deleteTables(createTable):
-        def delete(self):
-                for table in self.tables:
-			print("[.] Delete {0} table".format(table))
-			self.execute("drop table {0}".format(table))
+    def delete(self):
+        for table in self.tables:
+            print("[.] Delete {0} table".format(table))
+            self.execute("drop table {0}".format(table))

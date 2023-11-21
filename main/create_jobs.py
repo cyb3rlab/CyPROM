@@ -1,4 +1,3 @@
-
 #############################################################################
 # Functions related to job creation
 #############################################################################
@@ -10,19 +9,20 @@ from multiprocessing import Process
 from process import training
 from storyboard import Storyboard
 
+
 # Create jobs
 def create_jobs(teamConfig, initial_points, scenarioFiles, test):
-	jobs = []
+    jobs = []
 
-	id = 0
-	for teamName,targets in teamConfig.items():
-		config = {}
-		config["teamName"] = teamName
-		config["targets"] = targets
-		config[Storyboard.INITIAL_SCORE_KEY] = initial_points
+    id = 0
+    for teamName, targets in teamConfig.items():
+        config = {}
+        config["teamName"] = teamName
+        config["targets"] = targets
+        config[Storyboard.INITIAL_SCORE_KEY] = initial_points
 
-		jobs.append(Process(target=training, args=(config, scenarioFiles, test)))
+        jobs.append(Process(target=training, args=(config, scenarioFiles, test)))
 
-		id += 1
+        id += 1
 
-	return jobs
+    return jobs

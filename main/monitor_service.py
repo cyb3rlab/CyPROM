@@ -1,4 +1,3 @@
-
 #############################################################################
 # Implementation of advanced monitoring functionality
 #
@@ -9,20 +8,22 @@
 # Third-party library imports
 import requests
 
+
+# Service monitoring
 class monitor_service():
 
-        # Check the "http" service
-	def http(self, address):
+    # Check the "http" service
+    def http(self, address):
 
-                # Build URL for service checking
-		url = "http://" + address
-                try:
-		        response = requests.get(url)
-                except:
-                        print("[-] monitor_service: http: Service check failed")
-                        return False
+        # Build URL for service checking
+        url = "http://" + address
+        try:
+            response = requests.get(url)
+        except:
+            print("[-] monitor_service: http: Service check failed")
+            return False
 
-                # TODO: More complex checks are possible
-                
-                print("[+] monitor_service: http: Service check succeeded")
-		return True
+        # TODO: More complex checks are possible
+
+        print("[+] monitor_service: http: Service check succeeded")
+        return True

@@ -1,15 +1,13 @@
-
 #############################################################################
 # Classes related to the CyPROM storyboard
 #############################################################################
 
 class Storyboard:
-
     #############################################################################
     # Generic constants
 
     # Program version
-    CYPROM_VERSION = "0.1"
+    CYPROM_VERSION = "0.2"
 
     # Module directories
     ACTIONS_DIR = "actions"
@@ -29,7 +27,6 @@ class Storyboard:
     HEADER_TEMPLATE_BAR = "-------------------------------------------"
     LOG_TEMPLATE_LOW = "{0:^13}| {1}"
     STEP_TEMPLATE = "  {0}: {1}"
-
 
     #############################################################################
     # Scenario constants
@@ -69,7 +66,6 @@ class Storyboard:
     STEP_REPEAT = "REPEAT"
     STEP_COMPLETE = "COMPLETE"
 
-
     #############################################################################
     # Configuration file constants
 
@@ -77,17 +73,17 @@ class Storyboard:
     TARGET_FILE_KEY = "TargetInformation"
     INITIAL_SCORE_KEY = "InitialScore"
 
-#    PUBLIC_SERVER_KEY = "PublicServer"
-#    PUBLIC_PORT_KEY = "PublicPort"
+    #PUBLIC_SERVER_KEY = "PublicServer"
+    #PUBLIC_PORT_KEY = "PublicPort"
 
-#    LOG_MODE_KEY = "LogMode"
+    #LOG_MODE_KEY = "LogMode"
 
     MSF_SERVER = "MsfServer"
     MSF_PORT = "MsfPort"
     MSF_USER = "MsfUser"
     MSF_PASSWORD = "MsfPassword"
     MSF_SQL_PREFIX = "Msf"
-    
+
     #############################################################################
     # Other constants
 

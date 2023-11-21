@@ -1,18 +1,15 @@
-
 #############################################################################
 # Functions related to character encoding
+#
+# NOTE: In Python 3 all strings are sequences of Unicode characters,
+#       so these functions are not required, but are kept for legacy reasons.
 #############################################################################
 
 # Change string to Unicode
 def decode(word):
-	if isinstance(word, str):
-		return word.decode("utf-8")
-	else:
-		return word
+    return word
+
 
 # Change Unicode to string
 def encode(word):
-	if isinstance(word, unicode):
-		return word.encode("utf-8")
-	else:
-		return word
+    return word
