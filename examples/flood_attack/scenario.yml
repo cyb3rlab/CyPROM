@@ -1,0 +1,15 @@
+scenario:
+ - step: A01
+   target: server1
+   action:
+    module: scan_open_ports
+    host: 192.168.1.2
+   success: A02
+   failure: COMPLETE
+ - step: A02
+   target: server1
+   action:
+    module: flood_attack
+    host: 192.168.1.2
+   success: REPEAT
+   failure: COMPLETE

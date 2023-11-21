@@ -1,0 +1,55 @@
+scenario:
+ - step: Authen_Failure
+   target: server1
+   action:
+    module: brute_force_auth
+    login-url: http://localhost/cyweb/backend/web/site/login
+    username-input-field: LoginForm[email]
+    password-input-field: LoginForm[password]
+    account-list: ../resources/account_list.csv
+   success: Broken_Access_Failure
+   failure: Security_Misconfig
+ - step: Broken_Access_Failure
+   target: server1
+   action:
+    module: crawl_content_auth
+    target-url: http://localhost/cyweb/backend/web/user/view/
+   success: Crypto_Failure
+   failure: Injection
+ - step: Security_Misconfig
+   target: server1
+   action:
+    module: crawl_content
+    target-url: http://localhost/cyweb/backend/web/post/view/1
+   success: Injection
+   failure: Injection
+ - step: Crypto_Failure
+   target: server1
+   action:
+    module: crawl_content_auth
+    target-url: http://localhost/cyweb/backend/web/post/view/
+   success: Injection
+   failure: Injection
+ - step: Injection
+   target: server1
+   action:
+    module: login_sql_injection
+    login-url: http://localhost/cyweb/backend/web/site/login
+    username-input-field: LoginForm[email]
+    password-input-field: LoginForm[password]
+   success: Scan_Open_Ports
+   failure: Scan_Open_Ports
+ - step: Scan_Open_Ports
+   target: server1
+   action:
+    module: scan_open_ports
+    host: 192.168.1.2
+   success: Flood_Attack
+   failure: COMPLETE
+ - step: Flood_Attack
+   target: server1
+   action:
+    module: flood_attack
+    host: 192.168.1.2
+   success: REPEAT
+   failure: COMPLETE

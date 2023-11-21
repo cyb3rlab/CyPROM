@@ -1,0 +1,25 @@
+scenario:
+ - step: A01
+   target: server1
+   action:
+    module: crawl_content
+    target-url: http://localhost/cyweb/backend/web/post/view/1
+   success: REPEAT
+   failure: A02
+ - step: A02
+   target: server1
+   action:
+    login-url: http://localhost/cyweb/backend/web/site/login
+    module: brute_force_auth
+    username-input-field: LoginForm[email]
+    password-input-field: LoginForm[password]
+    account-list: ../resources/account_list.csv
+   success: A02A
+   failure: COMPLETE
+ - step: A02A
+   target: server1
+   action:
+    module: crawl_content_auth
+    target-url: http://localhost/cyweb/backend/web/order/view/1
+   success: REPEAT
+   failure: COMPLETE

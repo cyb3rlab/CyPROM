@@ -1,0 +1,10 @@
+scenario:
+ - step: A01
+   target: server1
+   action:
+    module: login_sql_injection
+    login-url: http://localhost/cyweb/backend/web/site/login
+    username-input-field: LoginForm[email]
+    password-input-field: LoginForm[password]
+   success: REPEAT
+   failure: COMPLETE

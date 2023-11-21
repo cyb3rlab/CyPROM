@@ -1,0 +1,8 @@
+scenario:
+- step: Command execution
+  target: server1
+  action:
+    module: cmd_exec
+    command:
+      - /script.sh @team_name
+  success: FINISH
