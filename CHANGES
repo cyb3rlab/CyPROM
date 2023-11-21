@@ -1,4 +1,22 @@
 
+CyPROM v0.2
+-----------
+* Added 7 new action modules in the command execution, dictionary
+  attack, content crawling, injection attack, network scanning and
+  denial of service categories, for a current total of 16 modules
+* Added 7 new example scenarios to illustrate the new action module
+  use, including a comprehensive scenario that can be used for
+  evaluation and training in relation with the Yii2 PHP framework, for
+  a current total of 11 scenarios
+* Created a sample web site that can be used to demonstrate the new
+  functionality of CyPROM; the necessary files are provided as an
+  additional asset in the GitHub release, named "cyweb.zip"
+* Added the command-line argument '--team_name' that makes it possible
+  to run a scenario for only one specific team
+* Improved and verified source code compatibility with Python 3, and
+  dropped support for Python 2
+* Other minor improvements and bug fixes
+
 CyPROM v0.1
 -----------
 * First public release

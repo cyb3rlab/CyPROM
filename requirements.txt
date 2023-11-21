@@ -1,3 +1,8 @@
 PyYAML           # For reading YAML files
 msgpack-python   # For handling binary data serialization
 requests         # For performing HTTP communication
+paramiko         # For the ssh_dict_attack action
+scapy            # For the flood_attack action
+beautifulsoup4   # For the brute_force_auth action
+ipaddress        # For the flood_attack and scan_open_ports_actions
+python-nmap      # For the flood_attack and scan_open_ports_actions
